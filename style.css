@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0f172a;
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent2: #22c55e;
+  --gold: #fbbf24;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(56, 189, 248, 0.15);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-time {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+  padding: 14px;
+  background: rgba(56, 189, 248, 0.08);
+  border-radius: 12px;
+}
+
+.time-main {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+.time-main .time-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-right: 8px;
+}
+
+.time-secondary {
+  font-size: 1rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.time-secondary .time-value {
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.date-block {
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  background: rgba(251, 191, 36, 0.06);
+  border-radius: 12px;
+  border-right: 3px solid var(--gold);
+}
+
+.date-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  padding: 3px 0;
+}
+
+.date-line .icon {
+  font-size: 1.1rem;
+}
+
+.weather-block {
+  margin-bottom: 18px;
+  padding: 14px;
+  background: rgba(34, 197, 94, 0.06);
+  border-radius: 12px;
+  border-right: 3px solid var(--accent2);
+}
+
+.weather-current {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.weather-icon {
+  font-size: 2.5rem;
+}
+
+.weather-temp {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent2);
+}
+
+.weather-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.weather-forecast {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.forecast-day {
+  text-align: center;
+  padding: 8px 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  font-size: 0.75rem;
+}
+
+.forecast-day .day-name {
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.forecast-day .day-icon {
+  font-size: 1.3rem;
+  margin: 4px 0;
+}
+
+.forecast-day .day-temps {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.forecast-day .temp-max {
+  color: #f87171;
+  font-weight: 700;
+}
+
+.forecast-day .temp-min {
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+.prayer-block {
+  padding: 14px;
+  background: rgba(168, 85, 247, 0.06);
+  border-radius: 12px;
+  border-right: 3px solid #a855f7;
+}
+
+.prayer-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #c084fc;
+}
+
+.prayer-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.prayer-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.prayer-item .name {
+  color: var(--text-muted);
+}
+
+.prayer-item .time {
+  font-weight: 700;
+  color: var(--text);
+  direction: ltr;
+}
+
+.prayer-item.next {
+  background: rgba(56, 189, 248, 0.2);
+  border: 1px solid var(--accent);
+}
+
+.app-footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.error-box {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid #ef4444;
+  border-radius: 12px;
+  padding: 16px;
+  color: #fca5a5;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+@media (max-width: 600px) {
+  .app-header h1 { font-size: 1.5rem; }
+  .card-title { font-size: 1.2rem; }
+  .time-main { font-size: 1.4rem; }
+  .prayer-list { grid-template-columns: repeat(2, 1fr); }
+  .weather-forecast { grid-template-columns: repeat(4, 1fr); }
+}
